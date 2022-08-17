@@ -17,7 +17,7 @@ az login
 
 # Now sign in again for PowerShell resource management and select subscription
 Write-Host "Now sign in again to allow this script to create resources..."
-Connect-AzAccount
+Connect-AzAccount -UseDeviceAuthentication
 
 $subs = Get-AzSubscription | Select-Object
 if($subs.GetType().IsArray -and $subs.length -gt 1){
